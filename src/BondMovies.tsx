@@ -14,7 +14,7 @@ function App() {
   const [uniqueQActors, setUniqueQActors] = useState<string[]>([]);
   const [uniqueMoneypennyActors, setUniqueMoneypennyActors] = useState<string[]>([]);
   const [uniqueBondGirlActresses, setUniqueBondGirlActresses] = useState<string[]>([]);
-  const [uniqueFemaleFataleActresses, setUniqueFemaleFataleActresses] = useState<string[]>([]);
+  const [uniqueFemmeFataleActresses, setUniqueFemmeFataleActresses] = useState<string[]>([]);
   const [uniqueYears, setUniqueYears] = useState<string[]>([]);
   const [uniqueSongs, setUniqueSongs] = useState<string[]>([]);
 
@@ -25,7 +25,7 @@ function App() {
   roles.add('Q');
   roles.add('Moneypenny');
   roles.add('bond_girl_actress');
-  roles.add('female_fatale_actress');
+  roles.add('femme_fatale_actress');
 
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function App() {
         const QActors = new Set<string>();
         const MoneypennyActors = new Set<string>();
         const BondGirlActresses = new Set<string>();
-        const FemaleFataleActresses = new Set<string>();
+        const FemmeFataleActresses = new Set<string>();
         const Years = new Set<string>();
         const Songs = new Set<string>();
         // create a set for all all the different actor types
@@ -55,14 +55,14 @@ function App() {
           actors.add(movie.Q);
           actors.add(movie.Moneypenny);
           actors.add(movie.bond_girl_actress);
-          actors.add(movie.female_fatale_actress);
+          actors.add(movie.femme_fatale_actress);
 
           BondActors.add(movie.bond_actor);
           MActors.add(movie.M);
           QActors.add(movie.Q);
           MoneypennyActors.add(movie.Moneypenny);
           BondGirlActresses.add(movie.bond_girl_actress);
-          FemaleFataleActresses.add(movie.female_fatale_actress);
+          FemmeFataleActresses.add(movie.femme_fatale_actress);
           
           directors.add(movie.director);
 
@@ -78,7 +78,7 @@ function App() {
         setUniqueQActors(Array.from(QActors));
         setUniqueMoneypennyActors(Array.from(MoneypennyActors));
         setUniqueBondGirlActresses(Array.from(BondGirlActresses));
-        setUniqueFemaleFataleActresses(Array.from(FemaleFataleActresses));
+        setUniqueFemmeFataleActresses(Array.from(FemmeFataleActresses));
         setUniqueYears(Array.from(Years));
         setUniqueSongs(Array.from(Songs));
 
@@ -151,7 +151,7 @@ function App() {
                     {actor}
                   </button>
                 ))}
-              {selectedSection === 'Actors' && selectedRole === 'female_fatale_actress' && uniqueFemaleFataleActresses.map((actor: string) => (
+              {selectedSection === 'Actors' && selectedRole === 'femme_fatale_actress' && uniqueFemmeFataleActresses.map((actor: string) => (
                   <button key={actor} onClick={() => handlePersonClick(actor)}>
                     {actor}
                   </button>
