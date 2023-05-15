@@ -93,8 +93,8 @@ function App() {
     setSelectedRole(role);
   }
 
-  const handleSectionClick = (role: string) => {
-    setSelectedSection(role);
+  const handleSectionClick = (section: string) => {
+    setSelectedSection(section);
     setSelectedPerson(null);
   };
 
